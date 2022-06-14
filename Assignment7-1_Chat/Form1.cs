@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Sockets;
 
 namespace Assignment7_1_Chat
 {
     public partial class Form1 : Form
     {
+        private Socket sck = null;
+        private EndPoint epLocal;
+        private EndPoint epRemote;
+        private byte[] buffer;
         public Form1()
         {
             InitializeComponent();
