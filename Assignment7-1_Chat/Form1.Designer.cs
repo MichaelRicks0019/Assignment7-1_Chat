@@ -30,49 +30,49 @@ namespace Assignment7_1_Chat
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.iPAddressTextBox = new System.Windows.Forms.TextBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.friendIPAddressTextBox = new System.Windows.Forms.TextBox();
-            this.iPAddressPortTextBox = new System.Windows.Forms.TextBox();
-            this.friendIPAddressPortTextBox = new System.Windows.Forms.TextBox();
+            this.textLocalIp = new System.Windows.Forms.TextBox();
+            this.textFriendsIp = new System.Windows.Forms.TextBox();
+            this.textLocalPort = new System.Windows.Forms.TextBox();
+            this.textFriendsPort = new System.Windows.Forms.TextBox();
             this.iPAddressLabel = new System.Windows.Forms.Label();
             this.friendIPAddressLabel = new System.Windows.Forms.Label();
             this.iPAddressPortLabel = new System.Windows.Forms.Label();
             this.friendIPAddressPortLabel = new System.Windows.Forms.Label();
-            this.startButton = new System.Windows.Forms.Button();
-            this.mainRIchTextBox = new System.Windows.Forms.RichTextBox();
-            this.subRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.sendButton = new System.Windows.Forms.Button();
+            this.buttonStart = new System.Windows.Forms.Button();
+            this.textMessage = new System.Windows.Forms.RichTextBox();
+            this.buttonSend = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.listMessage = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // iPAddressTextBox
+            // textLocalIp
             // 
-            this.iPAddressTextBox.Location = new System.Drawing.Point(171, 32);
-            this.iPAddressTextBox.Name = "iPAddressTextBox";
-            this.iPAddressTextBox.Size = new System.Drawing.Size(170, 20);
-            this.iPAddressTextBox.TabIndex = 0;
+            this.textLocalIp.Location = new System.Drawing.Point(171, 32);
+            this.textLocalIp.Name = "textLocalIp";
+            this.textLocalIp.Size = new System.Drawing.Size(170, 20);
+            this.textLocalIp.TabIndex = 0;
             // 
-            // friendIPAddressTextBox
+            // textFriendsIp
             // 
-            this.friendIPAddressTextBox.Location = new System.Drawing.Point(171, 58);
-            this.friendIPAddressTextBox.Name = "friendIPAddressTextBox";
-            this.friendIPAddressTextBox.Size = new System.Drawing.Size(170, 20);
-            this.friendIPAddressTextBox.TabIndex = 1;
+            this.textFriendsIp.Location = new System.Drawing.Point(171, 58);
+            this.textFriendsIp.Name = "textFriendsIp";
+            this.textFriendsIp.Size = new System.Drawing.Size(170, 20);
+            this.textFriendsIp.TabIndex = 1;
             // 
-            // iPAddressPortTextBox
+            // textLocalPort
             // 
-            this.iPAddressPortTextBox.Location = new System.Drawing.Point(403, 32);
-            this.iPAddressPortTextBox.Name = "iPAddressPortTextBox";
-            this.iPAddressPortTextBox.Size = new System.Drawing.Size(113, 20);
-            this.iPAddressPortTextBox.TabIndex = 2;
+            this.textLocalPort.Location = new System.Drawing.Point(403, 32);
+            this.textLocalPort.Name = "textLocalPort";
+            this.textLocalPort.Size = new System.Drawing.Size(113, 20);
+            this.textLocalPort.TabIndex = 2;
             // 
-            // friendIPAddressPortTextBox
+            // textFriendsPort
             // 
-            this.friendIPAddressPortTextBox.Location = new System.Drawing.Point(403, 58);
-            this.friendIPAddressPortTextBox.Name = "friendIPAddressPortTextBox";
-            this.friendIPAddressPortTextBox.Size = new System.Drawing.Size(113, 20);
-            this.friendIPAddressPortTextBox.TabIndex = 3;
+            this.textFriendsPort.Location = new System.Drawing.Point(403, 58);
+            this.textFriendsPort.Name = "textFriendsPort";
+            this.textFriendsPort.Size = new System.Drawing.Size(113, 20);
+            this.textFriendsPort.TabIndex = 3;
             // 
             // iPAddressLabel
             // 
@@ -110,59 +110,61 @@ namespace Assignment7_1_Chat
             this.friendIPAddressPortLabel.TabIndex = 7;
             this.friendIPAddressPortLabel.Text = "Port:";
             // 
-            // startButton
+            // buttonStart
             // 
-            this.startButton.Location = new System.Drawing.Point(75, 84);
-            this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(441, 37);
-            this.startButton.TabIndex = 8;
-            this.startButton.Text = "Start";
-            this.startButton.UseVisualStyleBackColor = true;
+            this.buttonStart.Location = new System.Drawing.Point(75, 84);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(441, 37);
+            this.buttonStart.TabIndex = 8;
+            this.buttonStart.Text = "Start";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
-            // mainRIchTextBox
+            // textMessage
             // 
-            this.mainRIchTextBox.Location = new System.Drawing.Point(75, 127);
-            this.mainRIchTextBox.Name = "mainRIchTextBox";
-            this.mainRIchTextBox.Size = new System.Drawing.Size(441, 213);
-            this.mainRIchTextBox.TabIndex = 9;
-            this.mainRIchTextBox.Text = "";
+            this.textMessage.Location = new System.Drawing.Point(75, 127);
+            this.textMessage.Name = "textMessage";
+            this.textMessage.Size = new System.Drawing.Size(441, 213);
+            this.textMessage.TabIndex = 9;
+            this.textMessage.Text = "";
             // 
-            // subRichTextBox
+            // buttonSend
             // 
-            this.subRichTextBox.Location = new System.Drawing.Point(75, 347);
-            this.subRichTextBox.Name = "subRichTextBox";
-            this.subRichTextBox.Size = new System.Drawing.Size(441, 25);
-            this.subRichTextBox.TabIndex = 10;
-            this.subRichTextBox.Text = "";
+            this.buttonSend.Location = new System.Drawing.Point(441, 382);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(75, 23);
+            this.buttonSend.TabIndex = 11;
+            this.buttonSend.Text = "Send";
+            this.buttonSend.UseVisualStyleBackColor = true;
             // 
-            // sendButton
+            // listMessage
             // 
-            this.sendButton.Location = new System.Drawing.Point(441, 378);
-            this.sendButton.Name = "sendButton";
-            this.sendButton.Size = new System.Drawing.Size(75, 23);
-            this.sendButton.TabIndex = 11;
-            this.sendButton.Text = "Send";
-            this.sendButton.UseVisualStyleBackColor = true;
+            this.listMessage.FormattingEnabled = true;
+            this.listMessage.Location = new System.Drawing.Point(75, 346);
+            this.listMessage.Name = "listMessage";
+            this.listMessage.Size = new System.Drawing.Size(441, 30);
+            this.listMessage.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 450);
-            this.Controls.Add(this.sendButton);
-            this.Controls.Add(this.subRichTextBox);
-            this.Controls.Add(this.mainRIchTextBox);
-            this.Controls.Add(this.startButton);
+            this.Controls.Add(this.listMessage);
+            this.Controls.Add(this.buttonSend);
+            this.Controls.Add(this.textMessage);
+            this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.friendIPAddressPortLabel);
             this.Controls.Add(this.iPAddressPortLabel);
             this.Controls.Add(this.friendIPAddressLabel);
             this.Controls.Add(this.iPAddressLabel);
-            this.Controls.Add(this.friendIPAddressPortTextBox);
-            this.Controls.Add(this.iPAddressPortTextBox);
-            this.Controls.Add(this.friendIPAddressTextBox);
-            this.Controls.Add(this.iPAddressTextBox);
+            this.Controls.Add(this.textFriendsPort);
+            this.Controls.Add(this.textLocalPort);
+            this.Controls.Add(this.textFriendsIp);
+            this.Controls.Add(this.textLocalIp);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -171,19 +173,19 @@ namespace Assignment7_1_Chat
 
         #endregion
 
-        private System.Windows.Forms.TextBox iPAddressTextBox;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.TextBox friendIPAddressTextBox;
-        private System.Windows.Forms.TextBox iPAddressPortTextBox;
-        private System.Windows.Forms.TextBox friendIPAddressPortTextBox;
+        private System.Windows.Forms.TextBox textLocalIp;
+        private System.Windows.Forms.TextBox textFriendsIp;
+        private System.Windows.Forms.TextBox textLocalPort;
+        private System.Windows.Forms.TextBox textFriendsPort;
         private System.Windows.Forms.Label iPAddressLabel;
         private System.Windows.Forms.Label friendIPAddressLabel;
         private System.Windows.Forms.Label iPAddressPortLabel;
         private System.Windows.Forms.Label friendIPAddressPortLabel;
-        private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.RichTextBox mainRIchTextBox;
-        private System.Windows.Forms.RichTextBox subRichTextBox;
-        private System.Windows.Forms.Button sendButton;
+        private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.RichTextBox textMessage;
+        private System.Windows.Forms.Button buttonSend;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.ListBox listMessage;
     }
 }
 
