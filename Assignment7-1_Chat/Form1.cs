@@ -71,5 +71,58 @@ namespace Assignment7_1_Chat
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void MessageCallBack(IAsyncResult aResult)
+        {
+            try
+            {
+                int size = sck.EndReceiveFrom(aResult, ref epRemote);
+                //Check is there is actually info recieved
+                if (size > 0)
+                {
+                    //get 1500 bytes of data (because thats how big the buffer is)
+                    byte[] receivedData = (byte[])aResult.AsyncState;
+                    //Converts byte array to string
+                    ASCIIEncoding eEncoding = new ASCIIEncoding();
+                    string receivedMessage = eEncoding.GetString(receivedData);
+                    //Adding message to the ListBox
+                    listMessage.Items.Add("Friend: " + receivedMessage);
+                    listMessage.SelectedIndex = listMessage.Items.Count - 1;
+                    listMessage.SelectedIndex = -1;
+                }
+                //Starts to listen to the Socket again
+                buffer = new byte[1500];
+                sck.BeginReceiveFrom(buffer, 0, buffer.Length, SocketFlags.None, ref epRemote, new AsyncCallback(MessageCallBack), buffer);
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.ToString());
+            }
+        }
+
+        private void buttonSend_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Converts from string to byte[]
+                ASCIIEncoding enc = new ASCIIEncoding();
+                byte[] msg = new byte[1500];
+                msg = enc.GetBytes(textMessage.Text);
+                //Sending the message
+                sck.Send(msg);
+                //Add to listbox
+                listMessage.Items.Add("You: " + textMessage.Text);
+                listMessage.SelectedIndex = listMessage.Items.Count - 1;
+                listMessage.SelectedIndex = -1;
+                //Clear txtMessage
+                textMessage.Clear();
+            }
+            catch (Exception ex)
+            {
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
     }
 }

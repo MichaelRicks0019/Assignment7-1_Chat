@@ -136,6 +136,7 @@ namespace Assignment7_1_Chat
             this.buttonSend.TabIndex = 11;
             this.buttonSend.Text = "Send";
             this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
             // 
             // listMessage
             // 
